@@ -1,5 +1,5 @@
 package application;
-	
+
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -19,10 +19,13 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
+
+
+
 public class Main extends Application {
-	
+
 	@Override
-	public void start(Stage primaryStage){
+	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Main.fxml"));
 			Parent root = loader.load();
@@ -31,53 +34,51 @@ public class Main extends Application {
 			Pane layout1 = new Pane();
 			Controller controller = loader.getController();
 			scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-			
+
 				@Override
 				public void handle(KeyEvent event) {
 					System.out.println(event.getCode());
 					switch (event.getCode()) {
 					case W:
-						//controller.increaseDetail();
+						// controller.increaseDetail();
 						System.out.println("W");
-						
+
 						break;
 					case D:
 						controller.increaseScale();
 						System.out.println("D");
-						
+
 						break;
 					case A:
 						controller.decreaseScale();
 						System.out.println("A");
 						break;
 					case S:
-						//controller.decreaseDetail();
+						// controller.decreaseDetail(); //
 						System.out.println("S");
 						break;
-					case NUMPAD8:
+					case NUMPAD8: // WIP - to move up the graph,
 						controller.moveUp();
 						break;
-						
+
 					default:
 						break;
 					}
-					
+
 				}
-				
+
 			});
+
 			
-			//scene.getStylesheets().add(getClass().getResource("application.css"))
+			
 			primaryStage.setScene(scene);
 			primaryStage.getIcons().add(icon);
 			primaryStage.show();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}	
-	
-	
+	}
 
-		
 	public static void main(String[] args) {
 		launch(args);
 	}
