@@ -1,3 +1,5 @@
+// This file is obsolete.
+
 package application;
 
 class study {
@@ -55,4 +57,5 @@ class study {
             
 
     }
+
 }
